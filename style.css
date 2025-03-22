@@ -4,66 +4,186 @@
     box-sizing: border-box;
     font-size: large;
 }
-
 body {
-    height: 100vh;
+    height: 150vh; /* Ensures enough scrollability */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(135deg,  #a8edea, #fbc2eb, #fceabb);
+    background-size: 100% 200%; /* Extend background height */
+    overflow-x : hidden;
+}
+
+#main-container {
+    flex: 1;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    flex-direction: column;
+}
+
+#title {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    color: cyan;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 5%;
+    border-radius: 0 0 80px 0;
+    z-index: 1000; /* Ensures it stays on top */
+    font-weight: 700;
+    
+}
+
+#hero-element-container {
+    height: 40vh; 
+    width: 100vw; 
+    
+}   
+
+#hero-image {
+    width: 100vw; 
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 0 110px 0 110px;
+    
+
+    mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.8) 10%, 
+        rgba(0, 0, 0, 1) 30%, 
+        rgba(0, 0, 0, 1) 70%, 
+        rgba(0, 0, 0, 0.5) 90%, 
+        rgba(0, 0, 0, 0) 100%);
+
+}
+
+#project-description {
+    margin-top: 50px;
+}
+
+#title-calender {
+    background-color: rgb(0, 0, 0);
+    color: cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 40%;
+    border-radius: 0 0 80px 0;
+    font-weight: 700;
+    align-self: flex-start;   
+    min-height: 50px;
+    margin: 50px 0;
+}
+
+
+#current-date-details {
+    height: 50%;
+    width: 100%;
+    margin-top: 50px;   
+    display : flex;
+    justify-content : center;
+    align-items : center;
     flex-direction: column;
 }
 
 
-#title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
+
+#calender {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 660px;
+    width: 60%;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 20px;
+    padding: 30px;
+    place-items: center;
+
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Soft shadow */
+}
+
+
+
+
+.calenderDate {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: darkgray;
     display : flex;
     justify-content : center;
     align-items : center;
-    width: 40%;
-    height: 8%;
-    border-radius: 0 50px 50px 0;
-    padding: 15px;
-    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-#hero-element-container {
-    height: 50%;
-    width: 100%;
-    position: absolute;
-    top: 90px;
-
+.calenderDate:hover {
+    cursor:pointer;
 }
 
 
-#hero-image {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover;
-    border-radius: 0 90px 0 90px;
-
+#user-name {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: cyan;
+    border-radius: 50px 0 0 0;
+    height: 50px;
+    width: 200px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    
 }
 
 
-
+/* Mobile Responsiveness code */
 @media (max-width: 768px) {
+    #title {
+        height: 4%;
+        width: 60%;
+    }
+
+    #title-calender {
+        width: 60%;
+    }
+
     #hero-element-container {
-        height : 20%;
+        height: 25vh;
     }
 
     #hero-image {
-        border-radius : 0 50px 0 50px;
-    }
-    
-    #title {
-        height: 5%;
-        width: 50%;
+        border-radius : 90px 0 90px 0;
+        margin: 15px 0;
     }
 
+
+
+    #calender {
+        height: 400px;
+        width: 350px;
+        gap: 7px;
+        font-size: small;
+        font-size: 1rem;
+        padding: 15px;
+    }
+    
+    .calenderDate {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+    }
+
+
+
+    
 
 
 
