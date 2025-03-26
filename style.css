@@ -13,7 +13,6 @@ body {
 }
 
 #main-container {
-    flex: 1;
     display : flex;
     justify-content : center;
     align-items : center;
@@ -40,7 +39,6 @@ body {
 #hero-element-container {
     height: 40vh; 
     width: 100vw; 
-    
 }   
 
 #hero-image {
@@ -81,51 +79,155 @@ body {
 
 
 #current-date-details {
-    height: 50%;
+    height: 100%;
     width: 100%;
-    margin-top: 50px;   
     display : flex;
     justify-content : center;
     align-items : center;
     flex-direction: column;
+    
 }
+
 
 
 
 #calender {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    height: 660px;
-    width: 60%;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    grid-auto-rows: minmax(40px, auto); /* Automatically adjusts row height */
+    height: auto; 
+    width: auto; 
+    background: rgba(22, 164, 229, 0.4);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 30px;
     place-items: center;
-
+    gap: 5px;
     backdrop-filter: blur(10px); /* Glass blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Soft shadow */
 }
 
 
 
-
-.calenderDate {
-    height: 100px;
-    width: 100px;
+.calenderDate {             /* created using js */
+    height: 100%;  
+    width: 50%;
     border-radius: 50%;
-    background-color: darkgray;
+    background-color: black;
     display : flex;
     justify-content : center;
     align-items : center;
     font-weight: 700;
 }
 
+
+.week-days-name {       /* Created using js */
+    border: 2px solid rgb(152, 3, 216, 0,2);
+    background-color: rgb(165, 11, 230, 0.3);
+    padding: 20px;
+    border-radius: 50px 10px 50px 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 500;
+    
+}
+
+
 .calenderDate:hover {
-    cursor:pointer;
+    cursor:pointer; 
+}
+.fade-effect {
+    opacity: 0.4;  
+    color: #999;  
+    filter: blur(1px);  
+    transition: all 0.3s ease-in-out;  
+}
+
+.fade-effect:hover {
+    opacity: 1;
+    filter: blur(0px);
+    color: #555;
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+#current-month-year-holder {
+    background: rgba(173, 216, 230, 0.2); /* Light cyan with transparency */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(173, 216, 230, 0.3); /* Subtle border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border-radius: 10px; /* Smooth corners */
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: column;
+    height: 15vh;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    color: #1389b0; /* Darker cyan for contrast */
+}
+
+#current-year {      /* holder */
+    width: 70%;
+}
+
+#inputField-year {
+    width: 60%;
+    margin-left: 45px;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba(208, 128, 211, 0.2); /* Light cyan with transparency */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Soft shadow */
+    border: none;
+}
+
+#month-options {
+    margin-left: 30px;
+    width: 45%;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba(208, 128, 211, 0.2); /* Light cyan with transparency */
+    backdrop-filter: blur(0px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Soft shadow */
+    border: none;
+}
+
+
+
+
+.calender-details {
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#project-footer {
+    background-color: darkcyan;
+    height: 30vh;
+    width: 100vw;
+    margin-top: 20px;
 }
 
 
@@ -139,8 +241,9 @@ body {
     width: 200px;
     display : flex;
     justify-content : center;
-    align-items : center;
-    
+    align-items : center; 
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 
@@ -167,9 +270,9 @@ body {
 
 
     #calender {
-        height: 400px;
-        width: 350px;
-        gap: 7px;
+        margin: 20px 0;
+        grid-auto-rows: minmax(45px, auto); /* Automatically adjusts row height */
+        width: 89%; /* Adjust width if needed */
         font-size: small;
         font-size: 1rem;
         padding: 15px;
@@ -181,9 +284,9 @@ body {
         border-radius: 50%;
     }
 
-
-
-    
+    .week-days-name {
+        padding: 4px;
+    }
 
 
 
