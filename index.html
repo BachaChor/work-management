@@ -15,7 +15,7 @@
     <div id="main-container">
     
         <div id="hero-element-container">
-            <img src="image/hero-another.jpg" alt="image of books" id="hero-image">
+            <img src="image/bulb.jpg" alt="image of books" id="hero-image">
         </div>
     
         <header>
@@ -24,8 +24,28 @@
 
 
         <div id="current-date-details">
-            <div id="title-calender"> CALENDER </div>        
-            <div id="calender"></div>
+            <div id="title-calender" class="calender-details"> CALENDAR </div>        
+
+
+
+            <!-- put some annimations on these for mobile -->
+            <div id="current-month-year-holder">
+                <div id="current-year" class="calender-details">
+                    <label for="inputField-year">Year:</label>
+                    <input list="year-options" id="inputField-year" placeholder="Select Year">
+                    <datalist id="year-options">
+                        <!-- adding the Year optiions using JS -->
+                    </datalist>
+                </div>
+
+                <div id="current-month" class="calender-details">
+                    <label for="month-options">Month:</label>
+                    <select id="month-options">
+                        <!-- adding the month optiions using JS -->
+                    </select>
+                </div>
+            </div>
+            <div id="calender"> </div>      <!--This is the main Calander on the Screen -->
         </div>
         
         
@@ -33,7 +53,10 @@
 
     </div>
     
-    <div id="user-name"> Swarna Singh</div>
+    <footer>
+        <div id="project-footer"></div>
+    </footer>
+    <div id="user-name">Swarna Singh</div>
     
 
 
